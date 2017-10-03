@@ -34,11 +34,11 @@ namespace PlayNGoExercice.Data.Migrations
 					new Entities.Pantry { PantryId = 5, OfficeId = 3, PantryName = "Singapore Pantry 2" }
 				);
 
-			context.DrinkMenus.AddOrUpdate(
+			context.CoffeeMenu.AddOrUpdate(
 				d => d.DrinkId,
-					new Entities.DrinkMenu { DrinkId = 1, DrinkName = "Double Americano" },
-					new Entities.DrinkMenu { DrinkId = 2, DrinkName = "Sweet Latte" },
-					new Entities.DrinkMenu { DrinkId = 3, DrinkName = "Flat White" }
+					new Entities.CoffeeMenu { DrinkId = 1, DrinkName = "Double Americano" },
+					new Entities.CoffeeMenu { DrinkId = 2, DrinkName = "Sweet Latte" },
+					new Entities.CoffeeMenu { DrinkId = 3, DrinkName = "Flat White" }
 				);
 
 			context.Ingredients.AddOrUpdate(

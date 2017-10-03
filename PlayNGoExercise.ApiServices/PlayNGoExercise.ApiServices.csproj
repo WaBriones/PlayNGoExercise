@@ -43,12 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICoffeeMenuApiService.cs" />
     <Compile Include="Interfaces\IOfficeApiService.cs" />
+    <Compile Include="Interfaces\IOrdersApiService.cs" />
     <Compile Include="Interfaces\IPantryApiService.cs" />
+    <Compile Include="Interfaces\IPantryStockApiService.cs" />
     <Compile Include="Mappers\ApiServiceMappers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CoffeeMenuApiService.cs" />
     <Compile Include="Services\OfficeApiService.cs" />
+    <Compile Include="Services\OrdersApiService.cs" />
     <Compile Include="Services\PantryApiService.cs" />
+    <Compile Include="Services\PantryStockApiService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayNGoExercice.Data\PlayNGoExercise.Data.csproj">

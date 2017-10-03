@@ -14,13 +14,13 @@ namespace PlayNGoExercice.Data.Entities
 		[Key]
 		public int OrderId { get; set; }
 
-		[ForeignKey("DrinkMenu")]
+		[ForeignKey("CoffeeMenu")]
 		public int DrinkId { get; set; }
 
 		[ForeignKey("Office")]
 		public int OfficeId { get; set; }
 
-		public virtual DrinkMenu DrinkMenu { get; set; }
+		public virtual CoffeeMenu CoffeeMenu { get; set; }
 
 		public virtual Office Office { get; set; }
 	}

@@ -9,7 +9,7 @@ namespace PlayNGoExercice.Data.Entities
 		[Key]
 		public int DrinkCostId { get; set; }
 
-		[ForeignKey("DrinkMenu")]
+		[ForeignKey("CoffeeMenu")]
 		public int DrinkId { get; set; }
 
 		[ForeignKey("Ingredient")]
@@ -17,7 +17,7 @@ namespace PlayNGoExercice.Data.Entities
 
 		public int Cost { get; set; }
 
-		public virtual DrinkMenu DrinkMenu { get; set; }
+		public virtual CoffeeMenu CoffeeMenu { get; set; }
 
 		public virtual Ingredient Ingredient { get; set; }
 	}

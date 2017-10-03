@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace PlayNGoExercice.Data.Entities
 {
-	[Table("CofeeMenu")]
-	public class DrinkMenu
+	[Table("CoffeeMenu")]
+	public class CoffeeMenu
 	{
-		public DrinkMenu()
+		public CoffeeMenu()
 		{
 			DrinkCosts = new HashSet<DrinkCost>();
 			Orders = new HashSet<Orders>();

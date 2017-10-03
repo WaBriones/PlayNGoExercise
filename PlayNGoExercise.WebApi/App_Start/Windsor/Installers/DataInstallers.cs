@@ -14,6 +14,10 @@ namespace PlayNGoExercise.WebApi.App_Start.Windsor.Installers
 			//Repositories
 			container.Register(Component.For<IOfficeRepository>().ImplementedBy<OfficeRepository>());
 			container.Register(Component.For<IPantryRepository>().ImplementedBy<PantryRepository>());
+			container.Register(Component.For<ICoffeeMenuRepository>().ImplementedBy<CoffeeMenuRepository>());
+			container.Register(Component.For<IDrinkCostRepository>().ImplementedBy<DrinkCostRepository>());
+			container.Register(Component.For<IPantryStockRepository>().ImplementedBy<PantryStockRepository>());
+			container.Register(Component.For<IOrderRepository>().ImplementedBy<OrderRepository>());
 
 			// EF Installers
 			container.Register(Component.For<IAmbientDbContextLocator>().ImplementedBy<AmbientDbContextLocator>());

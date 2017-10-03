@@ -11,10 +11,16 @@ namespace PlayNGoExercise.ApiServices.Mappers
 			// Entity -> DTO
 			CreateMap<Office, OfficeDto>();
 			CreateMap<Pantry, PantryDto>();
+			CreateMap<Orders, OrdersDto>();
+			CreateMap<CoffeeMenu, CoffeeMenuDto>();
+			CreateMap<PantryStock, PantryStockDto>();
 
 			// DTO -> Entity
 			CreateMap<OfficeDto, Office>();
 			CreateMap<PantryDto, Pantry>();
+			CreateMap<OrdersDto, Orders>();
+			CreateMap<CoffeeMenuDto, CoffeeMenu>();
+			CreateMap<PantryStockDto, PantryStock>();
 		}
 	}
 }
