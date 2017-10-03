@@ -9,6 +9,6 @@ namespace PlayNGoExercice.Data.Repositories
 
 		ICollection<Office> GetMany();
 
-		void AddOffice(Office office);
+		Office AddOffice(Office office);
 	}
 }

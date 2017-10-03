@@ -20,13 +20,15 @@ namespace PlayNGoExercice.Data.Repositories
 			_contextScopeFactory = contextScopeFactory;
 		}
 
-		public void AddOffice(Office office)
+		public Office AddOffice(Office office)
 		{
 			using (var context = _contextScopeFactory.Create(DbContextScopeOption.ForceCreateNew))
 			{
 				_contextLocator.Get<DataContext>().Offices.Add(office);
 				context.SaveChanges();
 			}
+
+			return office;
 		}
 
 		public Office GetById(int id)

@@ -12,6 +12,6 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 		PantryDto GetById(int id);
 		ICollection<PantryDto> GetByOffice(int officeId);
 
-		void AddPantryToOffice(int officeId, string pantryName);
+		PantryDto AddPantryToOffice(PantryDto pantry);
 	}
 }

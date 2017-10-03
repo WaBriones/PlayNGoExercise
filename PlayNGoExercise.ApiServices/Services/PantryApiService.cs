@@ -17,15 +17,11 @@ namespace PlayNGoExercise.ApiServices.Services
 			_pantryRepository = pantryRepository;
 		}
 
-		public void AddPantryToOffice(int officeId, string pantryName)
+		public PantryDto AddPantryToOffice(PantryDto pantryDto)
 		{
-			var pantry = new Pantry
-			{
-				PantryName = pantryName,
-				OfficeId = officeId
-			};
+			var pantry = Mapper.Map<PantryDto, Pantry>(pantryDto);
 
-			_pantryRepository.AddPantryToOffice(pantry);
+			return Mapper.Map<Pantry, PantryDto>(_pantryRepository.AddPantryToOffice(pantry));
 		}
 
 		public PantryDto GetById(int id)

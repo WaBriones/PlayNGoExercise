@@ -8,8 +8,13 @@ namespace PlayNGoExercise.ApiServices.Mappers
 	{
 		public ApiServiceMappers()
 		{
+			// Entity -> DTO
 			CreateMap<Office, OfficeDto>();
 			CreateMap<Pantry, PantryDto>();
+
+			// DTO -> Entity
+			CreateMap<OfficeDto, Office>();
+			CreateMap<PantryDto, Pantry>();
 		}
 	}
 }

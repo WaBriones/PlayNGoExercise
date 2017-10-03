@@ -13,6 +13,6 @@ namespace PlayNGoExercice.Data.Repositories
 
 		ICollection<Pantry> GetByOffice(int officeId);
 
-		void AddPantryToOffice(Pantry pantry);
+		Pantry AddPantryToOffice(Pantry pantry);
 	}
 }

@@ -28,5 +28,10 @@ namespace PlayNGoExercise.WebApi.Controllers
 		{
 			return _pantryApiService.GetByOffice(officeId);
 		}
+
+		public PantryDto AddPantryToOffice([FromBody] PantryDto pantry)
+		{
+			return _pantryApiService.AddPantryToOffice(pantry);
+		}
 	}
 }

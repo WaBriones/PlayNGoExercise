@@ -27,5 +27,11 @@ namespace PlayNGoExercise.WebApi.Controllers
 		{
 			return _officeApiService.GetMany();
 		}
+
+		[HttpPost]
+		public OfficeDto AddOffice([FromBody] OfficeDto office)
+		{
+			return _officeApiService.AddOffice(office);
+		}
 	}
 }

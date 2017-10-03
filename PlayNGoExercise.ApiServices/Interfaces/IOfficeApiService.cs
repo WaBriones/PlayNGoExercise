@@ -12,6 +12,6 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 		OfficeDto GetById(int id);
 		ICollection<OfficeDto> GetMany();
 
-		void AddOffice(string name);
+		OfficeDto AddOffice(OfficeDto name);
 	}
 }

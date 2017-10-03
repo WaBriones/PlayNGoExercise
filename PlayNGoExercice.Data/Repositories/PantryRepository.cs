@@ -21,13 +21,15 @@ namespace PlayNGoExercice.Data.Repositories
 			_contextScopeFactory = contextScopeFactory;
 		}
 
-		public void AddPantryToOffice(Pantry pantry)
+		public Pantry AddPantryToOffice(Pantry pantry)
 		{
 			using (var context = _contextScopeFactory.Create(DbContextScopeOption.ForceCreateNew))
 			{
 				_contextLocator.Get<DataContext>().Pantry.Add(pantry);
 				context.SaveChanges();
 			}
+
+			return pantry;
 		}
 
 		public Pantry GetById(int id)

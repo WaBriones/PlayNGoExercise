@@ -17,14 +17,11 @@ namespace PlayNGoExercise.ApiServices.Services
 			_officeRepository = officeRepository;
 		}
 
-		public void AddOffice(string name)
+		public OfficeDto AddOffice(OfficeDto officeDto)
 		{
-			var office = new Office
-			{
-				OfficeName = name
-			};
+			var office = Mapper.Map<OfficeDto, Office>(officeDto);
 
-			_officeRepository.AddOffice(office);
+			return Mapper.Map<Office, OfficeDto>(_officeRepository.AddOffice(office));
 		}
 
 		public OfficeDto GetById(int id)
