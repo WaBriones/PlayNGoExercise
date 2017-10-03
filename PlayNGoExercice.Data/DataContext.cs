@@ -12,5 +12,10 @@ namespace PlayNGoExercice.Data
 		}
 		public DbSet<Office> Offices { get; set; }
 		public DbSet<Pantry> Pantry { get; set; }
+		public DbSet<DrinkCost> DrinkCosts { get; set; }
+		public DbSet<DrinkMenu> DrinkMenus { get; set; }
+		public DbSet<Ingredient> Ingredients { get; set; }
+		public DbSet<Orders> Orders { get; set; }
+		public DbSet<PantryStock> PantryStocks { get; set; }
 	}
 }

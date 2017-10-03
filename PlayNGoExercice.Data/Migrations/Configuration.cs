@@ -33,6 +33,46 @@ namespace PlayNGoExercice.Data.Migrations
 					new Entities.Pantry { PantryId = 4, OfficeId = 3, PantryName = "Singapore Pantry 1" },
 					new Entities.Pantry { PantryId = 5, OfficeId = 3, PantryName = "Singapore Pantry 2" }
 				);
+
+			context.DrinkMenus.AddOrUpdate(
+				d => d.DrinkId,
+					new Entities.DrinkMenu { DrinkId = 1, DrinkName = "Double Americano" },
+					new Entities.DrinkMenu { DrinkId = 2, DrinkName = "Sweet Latte" },
+					new Entities.DrinkMenu { DrinkId = 3, DrinkName = "Flat White" }
+				);
+
+			context.Ingredients.AddOrUpdate(
+				i => i.IngredientId,
+					new Entities.Ingredient { IngredientId = 1, IngredientName = "Coffee Beans" },
+					new Entities.Ingredient { IngredientId = 2, IngredientName = "Sugar" },
+					new Entities.Ingredient { IngredientId = 3, IngredientName = "Milk" }
+				);
+
+			context.DrinkCosts.AddOrUpdate(
+				d => d.DrinkCostId,				
+					new Entities.DrinkCost { DrinkCostId = 1, DrinkId = 1, IngredientId = 1, Cost = 3},
+
+					new Entities.DrinkCost { DrinkCostId = 2, DrinkId = 2, IngredientId = 1, Cost = 2 },
+					new Entities.DrinkCost { DrinkCostId = 3, DrinkId = 2, IngredientId = 2, Cost = 5 },
+					new Entities.DrinkCost { DrinkCostId = 4, DrinkId = 2, IngredientId = 3, Cost = 3 },
+
+					new Entities.DrinkCost { DrinkCostId = 5, DrinkId = 3, IngredientId = 1, Cost = 2 },
+					new Entities.DrinkCost { DrinkCostId = 6, DrinkId = 3, IngredientId = 2, Cost = 1 },
+					new Entities.DrinkCost { DrinkCostId = 7, DrinkId = 3, IngredientId = 3, Cost = 4 }
+				);
+
+			context.PantryStocks.AddOrUpdate(
+				p => p.PantryStockId,
+					//Manila Pantry
+					new Entities.PantryStock { PantryStockId = 1, OfficeId = 1, IngredientId = 1, Amount = 45 },
+					new Entities.PantryStock { PantryStockId = 2, OfficeId = 1, IngredientId = 2, Amount = 45 },
+					new Entities.PantryStock { PantryStockId = 3, OfficeId = 1, IngredientId = 3, Amount = 45 },
+
+					//Makati Pantry
+					new Entities.PantryStock { PantryStockId = 4, OfficeId = 2, IngredientId = 1, Amount = 45 },
+					new Entities.PantryStock { PantryStockId = 5, OfficeId = 2, IngredientId = 2, Amount = 45 },
+					new Entities.PantryStock { PantryStockId = 6, OfficeId = 2, IngredientId = 3, Amount = 45 }
+				);
 		}
     }
 }

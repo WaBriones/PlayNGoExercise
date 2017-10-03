@@ -53,11 +53,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Entities\DrinkMenu.cs" />
+    <Compile Include="Entities\DrinkCost.cs" />
+    <Compile Include="Entities\Ingredient.cs" />
     <Compile Include="Entities\Office.cs" />
+    <Compile Include="Entities\Orders.cs" />
     <Compile Include="Entities\Pantry.cs" />
+    <Compile Include="Entities\PantryStock.cs" />
     <Compile Include="Migrations\201710030754432_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\201710030754432_InitialDatabaseCreation.Designer.cs">
       <DependentUpon>201710030754432_InitialDatabaseCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710031338473_AdditionalTables.cs" />
+    <Compile Include="Migrations\201710031338473_AdditionalTables.Designer.cs">
+      <DependentUpon>201710031338473_AdditionalTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710030754432_InitialDatabaseCreation.resx">
       <DependentUpon>201710030754432_InitialDatabaseCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031338473_AdditionalTables.resx">
+      <DependentUpon>201710031338473_AdditionalTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
