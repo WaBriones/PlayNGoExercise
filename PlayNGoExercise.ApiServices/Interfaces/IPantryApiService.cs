@@ -9,7 +9,7 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 {
 	public interface IPantryApiService
 	{
-		Pantry GetById(int id);
-		ICollection<Pantry> GetManyByOffice(int officeId);
+		PantryDto GetById(int id);
+		ICollection<PantryDto> GetManyByOffice(int officeId);
 	}
 }

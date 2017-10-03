@@ -9,7 +9,7 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 {
 	public interface IOfficeApiService
 	{
-		Office GetById(int id);
-		ICollection<Office> GetMany();
+		OfficeDto GetById(int id);
+		ICollection<OfficeDto> GetMany();
 	}
 }

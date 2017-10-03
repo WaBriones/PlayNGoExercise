@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlayNGoExercise.Model
 {
-	public class Pantry
+	public class PantryDto
 	{
 	}
 }
