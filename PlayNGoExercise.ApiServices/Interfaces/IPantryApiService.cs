@@ -10,6 +10,8 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 	public interface IPantryApiService
 	{
 		PantryDto GetById(int id);
-		ICollection<PantryDto> GetManyByOffice(int officeId);
+		ICollection<PantryDto> GetByOffice(int officeId);
+
+		void AddPantryToOffice(int officeId, string pantryName);
 	}
 }

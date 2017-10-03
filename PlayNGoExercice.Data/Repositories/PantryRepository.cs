@@ -1,56 +1,55 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using PlayNGoExercice.Data.Entities;
 using EntityFramework.DbContextScope.Interfaces;
-using System;
-using System.Collections.Generic;
 using EntityFramework.DbContextScope;
 
 namespace PlayNGoExercice.Data.Repositories
 {
-	public class OfficeRepository : IOfficeRepository
+	public class PantryRepository : IPantryRepository
 	{
 		private readonly IAmbientDbContextLocator _contextLocator;
 		private readonly IDbContextScopeFactory _contextScopeFactory;
 
-		public OfficeRepository(
-			IAmbientDbContextLocator contextLocator,
+		public PantryRepository(IAmbientDbContextLocator contextLocator,
 			IDbContextScopeFactory contextScopeFactory)
 		{
 			_contextLocator = contextLocator;
 			_contextScopeFactory = contextScopeFactory;
 		}
 
-		public void AddOffice(Office office)
+		public void AddPantryToOffice(Pantry pantry)
 		{
 			using (var context = _contextScopeFactory.Create(DbContextScopeOption.ForceCreateNew))
 			{
-				_contextLocator.Get<DataContext>().Offices.Add(office);
+				_contextLocator.Get<DataContext>().Pantry.Add(pantry);
 				context.SaveChanges();
 			}
 		}
 
-		public Office GetById(int id)
+		public Pantry GetById(int id)
 		{
-			Office office;
+			Pantry pantry;
 			using (var context = _contextScopeFactory.CreateReadOnly())
 			{
-				office = _contextLocator.Get<DataContext>().Offices.FirstOrDefault(x => x.OfficeId == id);
+				pantry = _contextLocator.Get<DataContext>().Pantry.FirstOrDefault(x => x.OfficeId == id);
 			}
 
-			return office;
+			return pantry;
 		}
 
-		public ICollection<Office> GetMany()
+		public ICollection<Pantry> GetByOffice(int officeId)
 		{
-			ICollection<Office> officeList;
+			ICollection<Pantry> pantryList;
 			using (var context = _contextScopeFactory.CreateReadOnly())
 			{
-				officeList = _contextLocator.Get<DataContext>().Offices.ToList();
+				pantryList = _contextLocator.Get<DataContext>().Pantry.Where(x => x.OfficeId == officeId).ToList();
 			}
 
-			return officeList;
+			return pantryList;
 		}
-
-		
 	}
 }

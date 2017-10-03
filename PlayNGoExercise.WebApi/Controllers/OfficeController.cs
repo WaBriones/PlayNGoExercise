@@ -22,5 +22,10 @@ namespace PlayNGoExercise.WebApi.Controllers
 		{
 			return _officeApiService.GetById(id);
 		}
+
+		public ICollection<OfficeDto> GetMany()
+		{
+			return _officeApiService.GetMany();
+		}
 	}
 }

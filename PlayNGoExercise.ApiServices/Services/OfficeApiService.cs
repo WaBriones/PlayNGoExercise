@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using PlayNGoExercise.ApiServices.Interfaces;
+﻿using System.Collections.Generic;
 using PlayNGoExercise.Model;
 using PlayNGoExercice.Data.Repositories;
 using AutoMapper;
 using PlayNGoExercice.Data.Entities;
+using PlayNGoExercise.ApiServices.Interfaces;
+using System;
 
 namespace PlayNGoExercise.ApiServices.Services
 {
@@ -17,6 +17,16 @@ namespace PlayNGoExercise.ApiServices.Services
 			_officeRepository = officeRepository;
 		}
 
+		public void AddOffice(string name)
+		{
+			var office = new Office
+			{
+				OfficeName = name
+			};
+
+			_officeRepository.AddOffice(office);
+		}
+
 		public OfficeDto GetById(int id)
 		{
 			return Mapper.Map<Office, OfficeDto>(_officeRepository.GetById(id));
@@ -24,7 +34,7 @@ namespace PlayNGoExercise.ApiServices.Services
 
 		public ICollection<OfficeDto> GetMany()
 		{
-			throw new NotImplementedException();
+			return Mapper.Map<ICollection<Office>, ICollection<OfficeDto>>(_officeRepository.GetMany());
 		}
 	}
 }

@@ -62,7 +62,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IOfficeRepository.cs" />
+    <Compile Include="Repositories\IPantryRepository.cs" />
     <Compile Include="Repositories\OfficeRepository.cs" />
+    <Compile Include="Repositories\PantryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

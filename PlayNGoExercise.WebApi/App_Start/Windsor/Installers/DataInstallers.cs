@@ -13,6 +13,7 @@ namespace PlayNGoExercise.WebApi.App_Start.Windsor.Installers
 		{
 			//Repositories
 			container.Register(Component.For<IOfficeRepository>().ImplementedBy<OfficeRepository>());
+			container.Register(Component.For<IPantryRepository>().ImplementedBy<PantryRepository>());
 
 			// EF Installers
 			container.Register(Component.For<IAmbientDbContextLocator>().ImplementedBy<AmbientDbContextLocator>());

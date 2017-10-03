@@ -11,6 +11,7 @@ namespace PlayNGoExercise.WebApi.App_Start.Windsor.Installers
 		public void Install(IWindsorContainer container, IConfigurationStore store)
 		{
 			container.Register(Component.For<IOfficeApiService>().ImplementedBy<OfficeApiService>());
+			container.Register(Component.For<IPantryApiService>().ImplementedBy<PantryApiService>());
 		}
 	}
 }

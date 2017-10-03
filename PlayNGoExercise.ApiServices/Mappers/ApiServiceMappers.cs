@@ -9,6 +9,7 @@ namespace PlayNGoExercise.ApiServices.Mappers
 		public ApiServiceMappers()
 		{
 			CreateMap<Office, OfficeDto>();
+			CreateMap<Pantry, PantryDto>();
 		}
 	}
 }
