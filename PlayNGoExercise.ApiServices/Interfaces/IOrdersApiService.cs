@@ -5,9 +5,9 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 {
 	public interface IOrdersApiService
 	{
-		void PlaceOrder(OrdersDto order);
+		void PlaceOrder(OrderHistoryDto order);
 
-		ICollection<OrdersDto> GetOrdersByOffice(int officeId);
+		ICollection<OrderHistoryDto> GetOrdersByOffice(int officeId);
 
 		IEnumerable<OrdersDto> GetAggregatedOrders();
 	}

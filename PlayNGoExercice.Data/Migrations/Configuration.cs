@@ -71,7 +71,12 @@ namespace PlayNGoExercice.Data.Migrations
 					//Makati Pantry
 					new Entities.PantryStock { PantryStockId = 4, OfficeId = 2, IngredientId = 1, Amount = 45 },
 					new Entities.PantryStock { PantryStockId = 5, OfficeId = 2, IngredientId = 2, Amount = 45 },
-					new Entities.PantryStock { PantryStockId = 6, OfficeId = 2, IngredientId = 3, Amount = 45 }
+					new Entities.PantryStock { PantryStockId = 6, OfficeId = 2, IngredientId = 3, Amount = 45 },
+
+					// Singapore Pantry
+					new Entities.PantryStock { PantryStockId = 7, OfficeId = 3, IngredientId = 1, Amount = 45 },
+					new Entities.PantryStock { PantryStockId = 8, OfficeId = 3, IngredientId = 2, Amount = 45 },
+					new Entities.PantryStock { PantryStockId = 9, OfficeId = 3, IngredientId = 3, Amount = 45 }
 				);
 		}
     }

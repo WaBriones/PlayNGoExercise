@@ -1,0 +1,22 @@
+﻿<h1>Order History</h1>
+<div ng-app="coffeeApp">
+	<div ng-controller="orderHistoryController" class="container">
+		<div class="row">
+			<div class="col-lg-7">
+				<label for="office">Office</label>
+				<select ng-model="selectedOffice" class="form-control" ng-change="onOfficeChange(selectedOffice)" ng-options="x.OfficeName for x in offices">
+					<option value="">-- Select Office --</option>
+				</select>
+			</div>
+		</div>
+		<br />
+		
+		<div id="historyGrid" ui-grid="gridOptions" class="grid">
+			<div class="grid-msg-overlay" ng-hide="loading || gridOptions.data.length">
+				<div class="msg">
+					<span>No Results</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

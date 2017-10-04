@@ -1,7 +1,7 @@
 ﻿(function () {
 	'use strict';
 
-	var app = angular.module('coffeeApp', ['ngRoute', 'ui.bootstrap', 'chart.js']);
+	var app = angular.module('coffeeApp', ['ngRoute', 'ui.bootstrap', 'chart.js', 'ui.grid']);
 
 	app.config(['$httpProvider', function ($httpProvider) {
 		//initialize get if not there

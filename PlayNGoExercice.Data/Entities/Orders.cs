@@ -20,6 +20,11 @@ namespace PlayNGoExercice.Data.Entities
 		[ForeignKey("Office")]
 		public int OfficeId { get; set; }
 
+		[StringLength(300)]
+		public string CustomerName { get; set; }
+
+		public DateTime? DateOrdered { get; set; }
+
 		public virtual CoffeeMenu CoffeeMenu { get; set; }
 
 		public virtual Office Office { get; set; }

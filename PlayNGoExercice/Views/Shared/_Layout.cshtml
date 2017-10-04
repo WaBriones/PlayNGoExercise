@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="~/Scripts/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -25,10 +26,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Orders", "Index", "Orders", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Order History", "Index", "OrderHistory", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Inventory", "Index", "Inventory", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Drink Distribution", "Index", "DrinkDistribution", new { area = "" }, null)</li>
-					<li>@Html.ActionLink("Maintenance", "Index", "Home", new { area = "" }, null)</li>
-                    @*<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -51,12 +51,14 @@
 	<script src="~/Scripts/angular-chart/angular-chart.min.js"></script>
 	<script src="~/Scripts/angular-route.js"></script>
 	<script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
-
+	<script src="~/Scripts/angular-ui-grid/ui-grid.min.js"></script>
+	
 	<script src="~/Scripts/app/site/app.js"></script>
 
-	<script src="~/Scripts/app/site/controllers/homeController.js"></script>
+	<script src="~/Scripts/app/site/controllers/orderController.js"></script>
 	<script src="~/Scripts/app/site/controllers/inventoryController.js"></script>
 	<script src="~/Scripts/app/site/controllers/drinkDistributionController.js"></script>
+	<script src="~/Scripts/app/site/controllers/orderHistoryController.js"></script>
 
 	<script src="~/Scripts/app/site/services/officeService.js"></script>
 	<script src="~/Scripts/app/site/services/coffeeMenuService.js"></script>

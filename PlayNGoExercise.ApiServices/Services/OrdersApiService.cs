@@ -19,15 +19,15 @@ namespace PlayNGoExercise.ApiServices.Services
 			_pantryStockRepository = pantryStockRepository;
 		}
 
-		public ICollection<OrdersDto> GetOrdersByOffice(int officeId)
+		public ICollection<OrderHistoryDto> GetOrdersByOffice(int officeId)
 		{
-			return Mapper.Map<ICollection<Orders>, ICollection<OrdersDto>>(_orderRepository.GetByOffice(officeId));
+			return Mapper.Map<ICollection<Orders>, ICollection<OrderHistoryDto>>(_orderRepository.GetByOffice(officeId));
 		}
 
-		public void PlaceOrder(OrdersDto order)
+		public void PlaceOrder(OrderHistoryDto order)
 		{
 			// Save to Orders
-			_orderRepository.PlaceOrder(Mapper.Map<OrdersDto, Orders>(order));
+			_orderRepository.PlaceOrder(Mapper.Map<OrderHistoryDto, Orders>(order));
 
 			// Deduct from inventory
 			_pantryStockRepository.UpdatePantryStocks(order.DrinkId, order.OfficeId);

@@ -15,8 +15,11 @@ namespace PlayNGoExercise.ApiServices.Mappers
 			CreateMap<CoffeeMenu, CoffeeMenuDto>();
 			CreateMap<PantryStock, PantryStockDto>()
 				.ForMember(dest => dest.IngredientName, opt => opt.MapFrom(src => src.Ingredient.IngredientName))
-				.ForMember(dest => dest.OfficeName, opt => opt.MapFrom(src => src.Office.OfficeName));
+				.ForMember(dest => dest.OfficeName, opt => opt.MapFrom(src => src.Office.OfficeName))
+				.ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount / 15m));
 			CreateMap<CustomOrderObject, OrdersDto>();
+			CreateMap<Orders, OrderHistoryDto>()
+				.ForMember(dest => dest.DrinkName, opt => opt.MapFrom(src => src.CoffeeMenu.DrinkName));
 
 			// DTO -> Entity
 			CreateMap<OfficeDto, Office>();
@@ -24,6 +27,8 @@ namespace PlayNGoExercise.ApiServices.Mappers
 			CreateMap<OrdersDto, Orders>();
 			CreateMap<CoffeeMenuDto, CoffeeMenu>();
 			CreateMap<PantryStockDto, PantryStock>();
+			CreateMap<OrderHistoryDto, Orders>();
+			
 		}
 	}
 }

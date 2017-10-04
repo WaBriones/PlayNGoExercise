@@ -25,7 +25,9 @@ namespace PlayNGoExercice.Data.Repositories
 			ICollection<Orders> orders;
 			using (var context = _contextScopeFactory.CreateReadOnly())
 			{
-				orders = _contextLocator.Get<DataContext>().Orders.Where(x => x.OfficeId == officeId).ToList();
+				orders = _contextLocator.Get<DataContext>().Orders
+					.Include(x => x.CoffeeMenu)
+					.Where(x => x.OfficeId == officeId).ToList();
 			}
 
 			return orders;
