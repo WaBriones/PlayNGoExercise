@@ -10,6 +10,6 @@ namespace PlayNGoExercise.Model
 	{
 		public int DrinkId { get; set; }
 
-		public string DrinkMenu { get; set; }
+		public string DrinkName { get; set; }
 	}
 }

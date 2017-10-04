@@ -18,11 +18,13 @@ namespace PlayNGoExercise.WebApi.Controllers
 			_officeApiService = officeApiService;
 		}
 
+		[HttpGet]
 		public OfficeDto Get(int id)
 		{
 			return _officeApiService.GetById(id);
 		}
 
+		[HttpGet]
 		public ICollection<OfficeDto> GetMany()
 		{
 			return _officeApiService.GetMany();

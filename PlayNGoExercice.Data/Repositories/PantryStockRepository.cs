@@ -58,8 +58,7 @@ namespace PlayNGoExercice.Data.Repositories
 			using (var context = _contextScopeFactory.CreateReadOnly())
 			{
 				stockList = _contextLocator.Get<DataContext>()
-					.PantryStocks
-					.Where(x => x.OfficeId == officeId).ToList();
+					.PantryStocks.ToList();
 			}
 
 			return stockList;
