@@ -14,6 +14,7 @@ namespace PlayNGoExercise.WebApi.App_Start.Windsor.Installers
 			container.Register(Component.For<IPantryApiService>().ImplementedBy<PantryApiService>());
 			container.Register(Component.For<IOrdersApiService>().ImplementedBy<OrdersApiService>());
 			container.Register(Component.For<ICoffeeMenuApiService>().ImplementedBy<CoffeeMenuApiService>());
+			container.Register(Component.For<IPantryStockApiService>().ImplementedBy<PantryStockApiService>());
 		}
 	}
 }

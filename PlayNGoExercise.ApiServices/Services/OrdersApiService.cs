@@ -33,5 +33,12 @@ namespace PlayNGoExercise.ApiServices.Services
 			_pantryStockRepository.UpdatePantryStocks(order.DrinkId, order.OfficeId);
 
 		}
+
+		public IEnumerable<OrdersDto> GetAggregatedOrders()
+		{
+			var allOrders = _orderRepository.GetAllOrders();
+
+			return Mapper.Map<IEnumerable<CustomOrderObject>, IEnumerable<OrdersDto>>(allOrders);
+		}
 	}
 }

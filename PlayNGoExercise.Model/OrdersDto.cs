@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PlayNGoExercise.Model
+﻿namespace PlayNGoExercise.Model
 {
 	public class OrdersDto
 	{
 		public int OfficeId { get; set; }
 
 		public int DrinkId { get; set; }
+
+		public string DrinkName { get; set; }
+
+		public string OfficeName { get; set; }
+
+		public int DrinkCount { get; set; }
 	}
 }

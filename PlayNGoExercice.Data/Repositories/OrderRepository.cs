@@ -3,6 +3,8 @@ using PlayNGoExercice.Data.Entities;
 using EntityFramework.DbContextScope.Interfaces;
 using System.Linq;
 using EntityFramework.DbContextScope;
+using System.Data.Entity;
+using System.Text;
 
 namespace PlayNGoExercice.Data.Repositories
 {
@@ -24,6 +26,33 @@ namespace PlayNGoExercice.Data.Repositories
 			using (var context = _contextScopeFactory.CreateReadOnly())
 			{
 				orders = _contextLocator.Get<DataContext>().Orders.Where(x => x.OfficeId == officeId).ToList();
+			}
+
+			return orders;
+		}
+
+		public IEnumerable<CustomOrderObject> GetAllOrders()
+		{
+			IEnumerable<CustomOrderObject> orders;
+			var sqlQuery = new StringBuilder();
+			sqlQuery.AppendLine("SELECT	query.OfficeId,")
+					.AppendLine("		query.OfficeName,")
+					.AppendLine("		COUNT(query.DrinkName) AS DrinkCount,")
+					.AppendLine("		query.DrinkName")
+					.AppendLine("FROM (")
+					.AppendLine("		SELECT ROW_NUMBER() OVER (PARTITION BY o.officeId order by oe.officeName) AS rn,")
+					.AppendLine("		oe.OfficeName,")
+					.AppendLine("		oe.OfficeId,")
+					.AppendLine("		cm.DrinkId,")
+					.AppendLine("		cm.DrinkName")
+					.AppendLine("FROM dbo.Orders o")
+					.AppendLine("	JOIN dbo.Office oe ON o.OfficeId = oe.OfficeId")
+					.AppendLine("	JOIN dbo.CoffeeMenu cm ON cm.DrinkId = o.DrinkId")
+					.AppendLine(") as query")
+					.AppendLine("GROUP BY query.drinkId, query.DrinkName, query.OfficeName, query.OfficeId");
+			using (var context = _contextScopeFactory.CreateReadOnly())
+			{
+				orders = _contextLocator.Get<DataContext>().Database.SqlQuery<CustomOrderObject>(sqlQuery.ToString()).ToList();
 			}
 
 			return orders;

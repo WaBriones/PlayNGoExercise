@@ -243,10 +243,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DrinkDistributionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -269,6 +271,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-chart\angular-chart.js" />
+    <Content Include="Scripts\angular-chart\angular-chart.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -279,9 +283,13 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\site\app.js" />
+    <Content Include="Scripts\app\site\controllers\drinkDistributionController.js" />
     <Content Include="Scripts\app\site\controllers\homeController.js" />
+    <Content Include="Scripts\app\site\controllers\inventoryController.js" />
     <Content Include="Scripts\app\site\services\coffeeMenuService.js" />
     <Content Include="Scripts\app\site\services\officeService.js" />
+    <Content Include="Scripts\app\site\services\orderService.js" />
+    <Content Include="Scripts\app\site\services\pantryStockService.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
     <Content Include="Scripts\app\app.viewmodel.js" />
@@ -313,7 +321,12 @@
     </Content>
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-chart\angular-chart.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.js\Chart.bundle.js" />
+    <Content Include="Scripts\Chart.js\Chart.bundle.min.js" />
+    <Content Include="Scripts\Chart.js\Chart.js" />
+    <Content Include="Scripts\Chart.js\Chart.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
@@ -325,6 +338,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\underscore\underscore-min.js" />
+    <Content Include="Scripts\underscore\underscore.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -364,6 +379,14 @@
     </Content>
     <Content Include="Views\Inventory\Index.cshtml" />
     <Content Include="Views\Inventory\_Inventory.cshtml" />
+    <Content Include="Scripts\underscore\LICENSE" />
+    <Content Include="Scripts\underscore\package.json" />
+    <Content Include="Scripts\underscore\README.md" />
+    <Content Include="Scripts\underscore\underscore-min.map" />
+    <Content Include="Views\DrinkDistribution\Index.cshtml" />
+    <Content Include="Views\DrinkDistribution\_DrinkDistribution.cshtml" />
+    <Content Include="Views\Orders\_Orders.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

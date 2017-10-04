@@ -13,7 +13,10 @@ namespace PlayNGoExercise.ApiServices.Mappers
 			CreateMap<Pantry, PantryDto>();
 			CreateMap<Orders, OrdersDto>();
 			CreateMap<CoffeeMenu, CoffeeMenuDto>();
-			CreateMap<PantryStock, PantryStockDto>();
+			CreateMap<PantryStock, PantryStockDto>()
+				.ForMember(dest => dest.IngredientName, opt => opt.MapFrom(src => src.Ingredient.IngredientName))
+				.ForMember(dest => dest.OfficeName, opt => opt.MapFrom(src => src.Office.OfficeName));
+			CreateMap<CustomOrderObject, OrdersDto>();
 
 			// DTO -> Entity
 			CreateMap<OfficeDto, Office>();

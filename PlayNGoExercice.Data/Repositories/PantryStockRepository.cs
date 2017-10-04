@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using PlayNGoExercice.Data.Entities;
 using EntityFramework.DbContextScope.Interfaces;
 
@@ -46,6 +47,8 @@ namespace PlayNGoExercice.Data.Repositories
 			{
 				stockList = _contextLocator.Get<DataContext>()
 					.PantryStocks
+					.Include(x => x.Office)
+					.Include(x => x.Ingredient)
 					.Where(x => x.OfficeId == officeId).ToList();
 			}
 
@@ -58,7 +61,10 @@ namespace PlayNGoExercice.Data.Repositories
 			using (var context = _contextScopeFactory.CreateReadOnly())
 			{
 				stockList = _contextLocator.Get<DataContext>()
-					.PantryStocks.ToList();
+					.PantryStocks
+					.Include(x => x.Office)
+					.Include(x => x.Ingredient)
+					.ToList();
 			}
 
 			return stockList;

@@ -24,5 +24,10 @@ namespace PlayNGoExercise.WebApi.Controllers
 		{
 			_orderApiService.PlaceOrder(order);
 		}
+
+		public IEnumerable<OrdersDto> GetAllOrders()
+		{
+			return _orderApiService.GetAggregatedOrders();
+		}
 	}
 }

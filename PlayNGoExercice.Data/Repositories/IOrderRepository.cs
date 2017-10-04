@@ -12,5 +12,7 @@ namespace PlayNGoExercice.Data.Repositories
 		ICollection<Orders> GetByOffice(int officeId);
 
 		Orders PlaceOrder(Orders order);
+
+		IEnumerable<CustomOrderObject> GetAllOrders();
 	}
 }

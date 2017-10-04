@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<script src="~/Scripts/underscore/underscore.js"></script>
 <script src="~/Scripts/angular.js"></script>
 <html lang="en">
 <head>
@@ -22,9 +23,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Orders", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Orders", "Index", "Orders", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Inventory", "Index", "Inventory", new { area = "" }, null)</li>
-					<li>@Html.ActionLink("Drink Distribution", "Index", "Home", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Drink Distribution", "Index", "DrinkDistribution", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Maintenance", "Index", "Home", new { area = "" }, null)</li>
                     @*<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>*@
                 </ul>
@@ -45,14 +47,20 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
 
+	<script src="~/Scripts/Chart.js/Chart.min.js"></script>
+	<script src="~/Scripts/angular-chart/angular-chart.min.js"></script>
 	<script src="~/Scripts/angular-route.js"></script>
 	<script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
-	
+
 	<script src="~/Scripts/app/site/app.js"></script>
 
 	<script src="~/Scripts/app/site/controllers/homeController.js"></script>
+	<script src="~/Scripts/app/site/controllers/inventoryController.js"></script>
+	<script src="~/Scripts/app/site/controllers/drinkDistributionController.js"></script>
 
 	<script src="~/Scripts/app/site/services/officeService.js"></script>
 	<script src="~/Scripts/app/site/services/coffeeMenuService.js"></script>
+	<script src="~/Scripts/app/site/services/pantryStockService.js"></script>
+	<script src="~/Scripts/app/site/services/orderService.js"></script>
 </body>
 </html>

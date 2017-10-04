@@ -1,7 +1,7 @@
 ﻿(function () {
 	'use strict';
 
-	var app = angular.module('coffeeApp', ['ngRoute', 'ui.bootstrap']);
+	var app = angular.module('coffeeApp', ['ngRoute', 'ui.bootstrap', 'chart.js']);
 
 	app.config(['$httpProvider', function ($httpProvider) {
 		//initialize get if not there
@@ -18,4 +18,8 @@
 		$httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
 		$httpProvider.defaults.headers.get["Access-Control-Allow-Origin"] = 'http://localhost:51510';
 	}]);
+
+	app.constant('_',
+		window._
+	);
 })();

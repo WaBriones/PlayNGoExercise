@@ -8,5 +8,7 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 		void PlaceOrder(OrdersDto order);
 
 		ICollection<OrdersDto> GetOrdersByOffice(int officeId);
+
+		IEnumerable<OrdersDto> GetAggregatedOrders();
 	}
 }

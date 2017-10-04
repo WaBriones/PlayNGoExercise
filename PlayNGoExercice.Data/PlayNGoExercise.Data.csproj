@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Entities\CoffeeMenu.cs" />
+    <Compile Include="Entities\CustomOrderObject.cs" />
     <Compile Include="Entities\DrinkCost.cs" />
     <Compile Include="Entities\Ingredient.cs" />
     <Compile Include="Entities\Office.cs" />

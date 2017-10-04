@@ -1,5 +1,21 @@
 ﻿<div ng-app="coffeeApp">
-	<div class="container">
+	<div ng-controller="inventoryController" class="container">
 		<h1>Inventory</h1>
+		<section>
+			<div class="row">
+				<div class="col-lg-7">
+					<label for="office">Office</label>
+					<select ng-model="selectedOffice" class="form-control" ng-change="onOfficeChange(selectedOffice)" ng-options="x.OfficeName for x in offices">
+						<option value="">-- Select Office --</option>
+					</select>
+				</div>
+			</div>
+			<br/>
+			<div ng-hide="hideChart" class="row">
+				<div class="col-md-7">
+					<canvas id="base" class="chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options"></canvas> 
+				</div>
+			</div>
+		</section>
 	</div>
 </div>
