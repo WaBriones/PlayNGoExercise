@@ -1,5 +1,6 @@
 namespace PlayNGoExercice.Data.Migrations
 {
+	using System;
 	using System.Data.Entity.Migrations;
 
 	internal sealed class Configuration : DbMigrationsConfiguration<DataContext>
@@ -77,6 +78,14 @@ namespace PlayNGoExercice.Data.Migrations
 					new Entities.PantryStock { PantryStockId = 7, OfficeId = 3, IngredientId = 1, Amount = 45 },
 					new Entities.PantryStock { PantryStockId = 8, OfficeId = 3, IngredientId = 2, Amount = 45 },
 					new Entities.PantryStock { PantryStockId = 9, OfficeId = 3, IngredientId = 3, Amount = 45 }
+				);
+
+			context.Orders.AddOrUpdate(
+				p => p.OrderId,
+
+					new Entities.Orders { OrderId = 1, OfficeId = 1, DrinkId = 1, CustomerName = "Warren", DateOrdered = DateTime.UtcNow },
+					new Entities.Orders { OrderId = 2, OfficeId = 1, DrinkId = 2, CustomerName = "Karl", DateOrdered = DateTime.UtcNow },
+					new Entities.Orders { OrderId = 3, OfficeId = 1, DrinkId = 3, CustomerName = "Jerome", DateOrdered = DateTime.UtcNow }
 				);
 		}
     }
