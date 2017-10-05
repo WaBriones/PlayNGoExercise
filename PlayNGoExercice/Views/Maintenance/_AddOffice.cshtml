@@ -1,0 +1,38 @@
+﻿<div ng-app="coffeeApp">
+	<div ng-controller="maintenanceController" class="container">
+		<h1>Add an Office</h1>
+		<form>
+			<div class="form-group">
+				<label for="officeName">Office</label>
+				<input type="text" class="form-control" id="officeName" ng-model="officeName" />
+			</div>
+
+			<button type="submit" class="btn btn-success" ng-click="submitOffice()">Add Office</button>
+			<div class="form-inline" ng-hide="!successOffice">
+				<span class="form-inline alert-success">Office Added</span>&nbsp;
+				<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+			</div>
+		</form>
+		<div ng-hide="!successOffice">
+			<form>
+				<br />
+				<div class="form-group">
+					<label for="office">Office</label>
+					<select ng-model="selectedOffice" class="form-control" ng-options="x.OfficeName for x in offices">
+						<option value="">-- Select Office --</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="pantryName">Pantry Name</label>
+					<input type="text" class="form-control" id="pantryName" ng-model="pantryName" />
+				</div>
+
+				<button type="submit" class="btn btn-success" ng-click="submitPantry()">Add Pantry</button>
+				<div class="form-inline" ng-hide="!successPantry">
+					<span class="form-inline alert-success">Office Added</span>&nbsp;
+					<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -70,9 +70,28 @@ namespace PlayNGoExercice.Data.Repositories
 			return stockList;
 		}
 
-		public PantryStock ReplenishStock(PantryStock pantryStock)
+		public void ReplenishStock(int officeId)
 		{
-			throw new NotImplementedException();
+			using (var context = _contextScopeFactory.Create())
+			{
+				var ingredients = _contextLocator.Get<DataContext>().Ingredients.ToList();
+				var pantryStocks = new List<PantryStock>();
+
+				foreach (var ingredient in ingredients)
+				{
+					pantryStocks.Add(
+						new PantryStock
+						{
+							IngredientId = ingredient.IngredientId,
+							OfficeId = officeId,
+							Amount = 45
+						});
+				}
+
+				_contextLocator.Get<DataContext>().PantryStocks.AddRange(pantryStocks);
+
+				context.SaveChanges();
+			}
 		}
 	}
 }

@@ -4,6 +4,7 @@ using PlayNGoExercise.Model;
 using AutoMapper;
 using PlayNGoExercice.Data.Entities;
 using PlayNGoExercice.Data.Repositories;
+using System;
 
 namespace PlayNGoExercise.ApiServices.Services
 {
@@ -14,6 +15,11 @@ namespace PlayNGoExercise.ApiServices.Services
 		public PantryStockApiService(IPantryStockRepository pantryStockRepository)
 		{
 			_pantryStockRepository = pantryStockRepository;
+		}
+
+		public void AddInitialPantryStocks(int officeId)
+		{
+			_pantryStockRepository.ReplenishStock(officeId);
 		}
 
 		public ICollection<PantryStockDto> GetAllStocks()

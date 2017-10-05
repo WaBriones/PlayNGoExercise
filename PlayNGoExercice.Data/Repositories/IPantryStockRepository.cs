@@ -11,7 +11,7 @@ namespace PlayNGoExercice.Data.Repositories
 	{
 		void UpdatePantryStocks(int drinkId, int officeId);
 
-		PantryStock ReplenishStock(PantryStock pantryStock);
+		void ReplenishStock(int officeId);
 
 		ICollection<PantryStock> GetStocksByOffice(int officeId);
 

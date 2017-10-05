@@ -13,5 +13,14 @@
 				};
 				return $http(request);
 			}
+
+			this.addOffice = function (data) {
+				var request = {
+					method: 'post',
+					url: baseOfficeUrl,
+					data: data
+				};
+				return $http(request);
+			}
 		});
 })();

@@ -11,17 +11,23 @@ namespace PlayNGoExercise.ApiServices.Services
 	public class PantryApiService : IPantryApiService
 	{
 		private readonly IPantryRepository _pantryRepository;
+		private readonly IPantryStockRepository _pantryStockRepository;
 
-		public PantryApiService(IPantryRepository pantryRepository)
+		public PantryApiService(IPantryRepository pantryRepository,
+			IPantryStockRepository pantryStockRepository)
 		{
 			_pantryRepository = pantryRepository;
+			_pantryStockRepository = pantryStockRepository;
 		}
 
 		public PantryDto AddPantryToOffice(PantryDto pantryDto)
 		{
 			var pantry = Mapper.Map<PantryDto, Pantry>(pantryDto);
 
-			return Mapper.Map<Pantry, PantryDto>(_pantryRepository.AddPantryToOffice(pantry));
+			var returnPantry = Mapper.Map<Pantry, PantryDto>(_pantryRepository.AddPantryToOffice(pantry));
+			_pantryStockRepository.ReplenishStock(pantryDto.OfficeId);
+
+			return returnPantry;
 		}
 
 		public PantryDto GetById(int id)

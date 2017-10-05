@@ -246,6 +246,7 @@
     <Compile Include="Controllers\DrinkDistributionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\OrderHistoryController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
@@ -295,12 +296,14 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\site\app.js" />
     <Content Include="Scripts\app\site\controllers\drinkDistributionController.js" />
+    <Content Include="Scripts\app\site\controllers\maintenanceController.js" />
     <Content Include="Scripts\app\site\controllers\orderHistoryController.js" />
     <Content Include="Scripts\app\site\controllers\orderController.js" />
     <Content Include="Scripts\app\site\controllers\inventoryController.js" />
     <Content Include="Scripts\app\site\services\coffeeMenuService.js" />
     <Content Include="Scripts\app\site\services\officeService.js" />
     <Content Include="Scripts\app\site\services\orderService.js" />
+    <Content Include="Scripts\app\site\services\pantryService.js" />
     <Content Include="Scripts\app\site\services\pantryStockService.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
@@ -444,6 +447,9 @@
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\OrderHistory\Index.cshtml" />
     <Content Include="Views\OrderHistory\_OrderHistory.cshtml" />
+    <Content Include="Views\Maintenance\_AddOffice.cshtml" />
+    <Content Include="Views\Maintenance\Index.cshtml" />
+    <Content Include="Views\Maintenance\_AddPantry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,6 +29,7 @@
 					<li>@Html.ActionLink("Order History", "Index", "OrderHistory", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Inventory", "Index", "Inventory", new { area = "" }, null)</li>
 					<li>@Html.ActionLink("Drink Distribution", "Index", "DrinkDistribution", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Maintenance", "Index", "Maintenance", new { area = "" }, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -59,10 +60,12 @@
 	<script src="~/Scripts/app/site/controllers/inventoryController.js"></script>
 	<script src="~/Scripts/app/site/controllers/drinkDistributionController.js"></script>
 	<script src="~/Scripts/app/site/controllers/orderHistoryController.js"></script>
+	<script src="~/Scripts/app/site/controllers/maintenanceController.js"></script>
 
 	<script src="~/Scripts/app/site/services/officeService.js"></script>
 	<script src="~/Scripts/app/site/services/coffeeMenuService.js"></script>
 	<script src="~/Scripts/app/site/services/pantryStockService.js"></script>
 	<script src="~/Scripts/app/site/services/orderService.js"></script>
+	<script src="~/Scripts/app/site/services/pantryService.js"></script>
 </body>
 </html>

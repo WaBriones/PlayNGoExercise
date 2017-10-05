@@ -12,5 +12,7 @@ namespace PlayNGoExercise.ApiServices.Interfaces
 		ICollection<PantryStockDto> GetStocksByOffice(int officeId);
 
 		ICollection<PantryStockDto> GetAllStocks();
+
+		void AddInitialPantryStocks(int officeId);
 	}
 }

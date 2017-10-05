@@ -5,7 +5,6 @@
 		.controller('inventoryController', [
 			'$scope', 'officeService', 'pantryStockService', '_', function ($scope, officeService, pantryStockService, _) {
 				$scope.hideChart = true;
-				$scope.options = { legend: { display: true } };
 
 				function getOfficeList() {
 					officeService.getOffices()
